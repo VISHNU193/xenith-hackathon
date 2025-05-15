@@ -2,7 +2,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 // Define the available languages
-export type Language = "en" | "kn";
+export type Language = "kn" |"en" ;
 
 // Define the translation context structure
 type TranslationContextType = {
@@ -17,7 +17,7 @@ const TranslationContext = createContext<TranslationContextType | undefined>(und
 // English translations
 const enTranslations: Record<string, string> = {
   // Navigation & Auth
-  healthcarePortal: "Healthcare Portal",
+  healthcarePortal: "Aayu Sathi",
   login: "Login",
   signup: "Sign Up",
   logout: "Logout",
@@ -136,7 +136,7 @@ const enTranslations: Record<string, string> = {
 // Kannada translations
 const knTranslations: Record<string, string> = {
   // Navigation & Auth
-  healthcarePortal: "ಆರೋಗ್ಯ ಪೋರ್ಟಲ್",
+  healthcarePortal: "ಆಯು ಸಾಥಿ",
   login: "ಲಾಗಿನ್",
   signup: "ಸೈನ್ ಅಪ್",
   logout: "ಲಾಗ್ ಔಟ್",
@@ -262,7 +262,7 @@ const translations: Record<Language, Record<string, string>> = {
 export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
     const savedLanguage = localStorage.getItem("language");
-    return (savedLanguage as Language) || "en";
+    return (savedLanguage as Language) || "kn";
   });
 
   // Save language preference to localStorage
