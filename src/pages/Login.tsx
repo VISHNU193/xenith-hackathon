@@ -38,7 +38,7 @@ const Login = () => {
           description: t("welcomeBack"),
           variant: "default",
         });
-        navigate("/dashboard");
+        navigate("/"); // Fix: Navigate to home page instead of dashboard
       } else {
         toast({
           title: t("loginFailed"),

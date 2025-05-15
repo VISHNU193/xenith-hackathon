@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -61,6 +60,18 @@ const GovernmentSchemes = () => {
       title: "Notifications Enabled",
       description: "You will now receive updates about new government schemes",
     });
+  };
+
+  const handleLearnMore = (schemeId: string) => {
+    // Find the scheme by ID
+    const scheme = schemes.find(s => s._id === schemeId);
+    
+    if (scheme) {
+      toast({
+        title: `${scheme.title} - Details`,
+        description: `Required documents: ${scheme.documentationRequired.join(', ')}`,
+      });
+    }
   };
 
   return (
@@ -149,10 +160,12 @@ const GovernmentSchemes = () => {
                             </a>
                           </Button>
                         ) : (
-                          <Button variant="outline" asChild className="w-full">
-                            <a href="#details" className="gap-2">
-                              {t("learnMore")} <ArrowRight className="h-4 w-4" />
-                            </a>
+                          <Button 
+                            variant="outline" 
+                            className="w-full gap-2" 
+                            onClick={() => handleLearnMore(scheme._id)}
+                          >
+                            {t("learnMore")} <ArrowRight className="h-4 w-4" />
                           </Button>
                         )}
                       </CardFooter>

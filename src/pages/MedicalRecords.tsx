@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,10 +33,10 @@ const MedicalRecords = () => {
   const [recordType, setRecordType] = useState("");
   const [recordDate, setRecordDate] = useState("");
 
-  // Load records on component mount
-  useState(() => {
+  // Fix: Use useEffect instead of useState for initialization
+  useEffect(() => {
     loadRecords();
-  });
+  }, []); // Empty dependency array means this runs once on mount
 
   const loadRecords = async () => {
     try {
