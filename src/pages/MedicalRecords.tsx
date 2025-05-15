@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useTranslation } from "@/hooks/useTranslation";
-import { FileText, Trash2, FileImage, FilePdf } from "lucide-react";
+import { FileText, Trash2, FileImage, File } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -122,7 +121,7 @@ const MedicalRecords = () => {
 
   const getFileIcon = (fileType: string) => {
     if (fileType.includes("pdf")) {
-      return <FilePdf className="h-8 w-8 text-red-500" />;
+      return <File className="h-8 w-8 text-red-500" />;
     } else if (fileType.includes("image")) {
       return <FileImage className="h-8 w-8 text-blue-500" />;
     } else {

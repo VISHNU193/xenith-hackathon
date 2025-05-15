@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { useTranslation } from "@/hooks/useTranslation";
-import { Search, VolumeUp, ArrowRight } from "lucide-react";
+import { Search, Volume, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { diseaseAnalysisService } from "@/services/diseaseAnalysisService";
 
@@ -119,7 +119,7 @@ const DiseaseAnalysis = () => {
                         onClick={handleTextToSpeech}
                         className="gap-2"
                       >
-                        <VolumeUp className="h-4 w-4" />
+                        <Volume className="h-4 w-4" />
                         {t("listenResults")}
                       </Button>
                     </div>

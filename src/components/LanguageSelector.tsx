@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Language, useTranslation } from "@/hooks/useTranslation";
-import { Language as LanguageIcon } from "lucide-react";
+import { Languages } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +21,7 @@ const LanguageSelector = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className="gap-2">
-          <LanguageIcon className="h-4 w-4" />
+          <Languages className="h-4 w-4" />
           {language.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
