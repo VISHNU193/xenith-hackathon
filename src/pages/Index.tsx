@@ -74,21 +74,32 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
-        <section className="py-12 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t("heroTitle")}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">{t("heroSubtitle")}</p>
-          <div className="flex justify-center gap-4">
-            <Link to="/signup">
-              <Button size="lg" className="gap-2">
-                {t("getStarted")}
-              </Button>
-            </Link>
-            <Link to="/disease-analysis">
-              <Button variant="outline" size="lg" className="gap-2">
-                {t("checkSymptoms")}
-              </Button>
-            </Link>
+      <main className="container mx-auto py-8">
+        <section 
+          className="py-16 text-center overflow-hidden relative w-full" 
+          style={{
+            backgroundImage: "url('https://www.bolton.ac.uk//assets/Uploads/What-is-Medical-Biology-University-of-Bolton.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            minHeight: "500px",
+            width: "100%"
+          }}
+        >
+          <div className="relative py-12 px-4">
+            <h2 className="text-4xl font-bold text-white mb-4" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}>{t("heroTitle")}</h2>
+            <p className="text-xl text-white max-w-2xl mx-auto mb-8" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>{t("heroSubtitle")}</p>
+            <div className="flex justify-center gap-4">
+              <Link to="/signup">
+                <Button size="lg" className="gap-2 bg-white hover:bg-white-700 text-black font-bold shadow-lg">
+                  {t("getStarted")}
+                </Button>
+              </Link>
+              <Link to="/disease-analysis">
+                <Button variant="outline" size="lg" className=" gap-2 border-white text-black font-bold shadow-lg">
+                  {t("checkSymptoms")}
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
